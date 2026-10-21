@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Thư ứng tuyển UI/UX Designer tại Yeah1 Group của Cù Phạm Thành Hiếu.">
+  <meta name="theme-color" content="#15101d">
+  <title>Cù Phạm Thành Hiếu — UI/UX Designer · Yeah1</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root{
+      --navy:#07172f;
+      --navy-2:#0b1f3d;
+      --navy-3:#10294d;
+      --surface:#132b4d;
+      --line:#ffffff18;
+      --text:#f7f9fd;
+      --muted:#a7b5c9;
+      --blue:#b63ad8;
+      --blue-light:#e294ff;
+      --orange:#ff7c3f;
+      --orange-light:#f5b9ed;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--navy);color:var(--text);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-underline-offset:4px}
+    a:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+    img{display:block;max-width:100%}
+    .wrap{width:min(1180px,100%);margin:auto;padding-inline:clamp(20px,5vw,64px)}
+    .skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:12px;z-index:99}.skip:focus{left:8px}
+    .header-shell{position:absolute;z-index:10;inset:0 0 auto}
+    .site-header{height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #ffffff12}
+    .mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900}
+    .mark-symbol{display:grid;place-items:center;width:32px;height:32px;border:1px solid #ffffff80;border-radius:50%;font-size:14px}
+    .mark-text{font-size:11px;letter-spacing:.7px}
+    .site-nav{display:flex;align-items:center;gap:28px;font-size:11px;font-weight:700}
+    .site-nav a{text-decoration:none;color:#dce5f2}.site-nav a:hover{color:#fff}
+    .nav-cta{padding:11px 18px;border:1px solid #ffffff54;border-radius:999px}
+
+    .hero{position:relative;min-height:760px;display:flex;align-items:center;overflow:hidden;background:
+      radial-gradient(circle at 76% 66%,#ff7c3f58 0,transparent 19%),
+      radial-gradient(circle at 72% 45%,#276ad163 0,transparent 35%),
+      linear-gradient(120deg,#07172f 20%,#0a1e3c 62%,#122a4e 100%)}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:130px;background:linear-gradient(180deg,transparent,var(--navy))}
+    .hero-content{position:relative;z-index:2;padding-top:90px;width:min(1180px,100%);margin:auto;padding-inline:clamp(20px,5vw,64px)}
+    .eyebrow{font-size:10px;line-height:1.4;letter-spacing:2px;text-transform:uppercase;color:var(--blue-light);font-weight:800}
+    .hero h1{font-size:clamp(58px,8.2vw,116px);line-height:.91;letter-spacing:-.065em;margin:28px 0 24px;max-width:780px}
+    .role{font-size:clamp(30px,4.2vw,58px);line-height:1;letter-spacing:-.045em;font-weight:700;margin:0;color:#fff}
+    .hero-note{max-width:525px;margin:28px 0 0;color:#c2cee0;font-size:15px;line-height:1.7}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:28px;min-height:46px;padding:0 20px;border:1px solid #ffffff3d;border-radius:999px;text-decoration:none;font-size:11px;font-weight:800;transition:.2s ease}
+    .button:hover{transform:translateY(-2px);border-color:#fff}
+    .button.primary{background:var(--blue);border-color:var(--blue)}.button.primary:hover{background:#3478ed}
+    .hero-art{position:absolute;z-index:1;right:2vw;bottom:86px;width:min(46vw,640px);height:500px;display:grid;place-items:center;pointer-events:none}
+    .hero-art:before{content:"";position:absolute;width:82%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#ff8a4229 0,#2f73df20 42%,transparent 68%);filter:blur(18px)}
+    .hero-symbol{position:relative;width:min(39vw,520px);height:auto;filter:drop-shadow(0 34px 45px #0008) drop-shadow(0 0 34px #ff8a4235);transform:perspective(900px) rotateY(-8deg) rotate(-2deg)}
+    .scroll-cue{position:absolute;z-index:3;left:50%;bottom:36px;transform:translateX(-50%);font-size:9px;letter-spacing:1.8px;color:#8192aa;text-transform:uppercase}
+
+    section{padding-block:clamp(78px,9vw,125px)}
+    .section-kicker{text-align:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue-light);font-weight:800}
+    .section-title{text-align:center;font-size:clamp(36px,5.3vw,67px);line-height:1.02;letter-spacing:-.052em;margin:18px auto 18px;max-width:850px}
+    .section-intro{text-align:center;color:var(--muted);font-size:13px;line-height:1.7;max-width:650px;margin:0 auto 52px}
+
+    .cover{background:linear-gradient(180deg,var(--navy),#091b35)}
+    .letter-panel{position:relative;border:1px solid var(--line);border-radius:20px;padding:clamp(25px,4vw,52px);background:linear-gradient(135deg,#102846,#0c203c 60%,#152e50);overflow:hidden}
+    .letter-panel:after{content:"";position:absolute;right:-120px;top:-140px;width:360px;height:360px;border-radius:50%;background:#286cdb22;filter:blur(8px)}
+    .letter-grid{position:relative;z-index:1;display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(32px,6vw,80px)}
+    .letter-lead{font-size:clamp(26px,3.4vw,43px);line-height:1.13;letter-spacing:-.035em;margin:0}.letter-lead span{color:var(--orange-light)}
+    .letter-copy{color:#c7d2e1;font-size:14px;line-height:1.78}.letter-copy p{margin:0 0 18px}.letter-copy strong{color:#fff}
+    .strength-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
+    .strength{min-height:185px;padding:22px 18px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,#162f53,#0c203c)}
+    .strength-num{font-size:10px;color:var(--orange-light);letter-spacing:1.2px;font-weight:800}
+    .strength h3{font-size:16px;margin:30px 0 10px}.strength p{font-size:11px;line-height:1.65;color:#aebcd0;margin:0}
+    .cover-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:32px}
+
+    .projects{background:#0a1b34}
+    .project-tabs{display:grid;grid-template-columns:repeat(3,1fr);max-width:760px;margin:0 auto 34px;border-block:1px solid var(--line)}
+    .project-tabs span{text-align:center;padding:14px 8px;color:#788aa5;font-size:11px}.project-tabs span:nth-child(2){color:#fff;background:linear-gradient(90deg,transparent,#214c842e,transparent);border-bottom:2px solid var(--blue-light)}
+    .project-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .project{position:relative;min-height:500px;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;background:#0d2342;isolation:isolate}
+    .project img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}.project:hover img{transform:scale(1.035)}
+    .project:after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(180deg,transparent 25%,#07172fae 61%,#061326 100%)}
+    .project-content{position:absolute;z-index:2;inset:auto 22px 23px}
+    .project-no{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#9bb9ea}
+    .project h3{display:flex;justify-content:space-between;gap:16px;font-size:clamp(23px,2.5vw,32px);letter-spacing:-.035em;margin:10px 0}.project h3 span{color:var(--orange-light)}
+    .project p{font-size:11px;line-height:1.6;color:#c0ccdc;margin:0}
+    .metrics{display:flex;gap:16px;margin-top:15px}.metrics span{font-size:8px;color:#a6b5c9}.metrics strong{display:block;font-size:14px;color:#fff;margin-bottom:3px}
+
+    .experience{background:linear-gradient(180deg,#0a1b34,var(--navy))}
+    .experience-list{max-width:920px;margin:0 auto;display:grid;gap:10px}
+    details.job{border:1px solid var(--line);border-radius:13px;background:linear-gradient(110deg,#132b4d,#0e2341);overflow:hidden}
+    details.job[open]{background:linear-gradient(110deg,#17345e,#0f2544)}
+    .job summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:20px;padding:21px 23px}.job summary::-webkit-details-marker{display:none}
+    .date{font-size:9px;letter-spacing:1.1px;color:#8294ae;text-transform:uppercase}
+    .job h3{font-size:16px;margin:0;font-weight:700}.company{display:block;margin-top:6px;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8eb7f8}
+    .plus{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#edf3fb;color:#11284a;font-weight:900;transition:.2s ease}.job[open] .plus{transform:rotate(45deg)}
+    .job p{margin:0;padding:0 70px 24px 153px;color:#b3c0d3;font-size:12px;line-height:1.7}
+
+    .contact{padding:0;background:#061326}
+    .contact-banner{position:relative;min-height:390px;display:flex;align-items:center;overflow:hidden;background:
+      radial-gradient(circle at 76% 42%,#ff9057a8 0,transparent 24%),
+      radial-gradient(circle at 84% 43%,#3775e5a1 0,transparent 38%),
+      linear-gradient(100deg,#030a15 0,#091a34 58%,#0d2c59 100%)}
+    .contact-banner:after{content:"";position:absolute;right:8%;top:50%;width:310px;height:160px;border:1px solid #9cbcff63;border-radius:50%;transform:translateY(-50%) rotate(-15deg);box-shadow:0 0 70px #407de63d}
+    .contact-copy{position:relative;z-index:1;max-width:650px}.contact-copy .section-kicker,.contact-copy .section-title,.contact-copy .section-intro{text-align:left;margin-left:0}.contact-copy .section-title{margin-bottom:15px}.contact-copy .section-intro{margin-bottom:26px}
+    .contact-primary{display:inline-flex;align-items:center;gap:35px;background:var(--blue);padding:15px 22px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800}
+    .footer-cta{background:#10294d;border-top:1px solid var(--line);padding:24px 0}.footer-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-cta strong{font-size:15px}.footer-links{display:flex;flex-wrap:wrap;gap:22px;font-size:10px}
+    footer{background:#061326;padding:52px 0 30px}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:50px}.footer-name{font-size:25px;font-weight:800;letter-spacing:-.03em}.footer-small{margin-top:16px;color:#71829c;font-size:10px;line-height:1.65}.footer-col{display:grid;align-content:start;gap:12px;font-size:10px}.footer-col strong{color:#fff;margin-bottom:7px}.footer-col a{color:#8d9db4;text-decoration:none}.copyright{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #ffffff10;margin-top:45px;padding-top:22px;color:#566881;font-size:8px;letter-spacing:1px}
+    @media(max-width:900px){.hero{min-height:700px}.hero-art{opacity:.5;right:-145px}.letter-grid{grid-template-columns:1fr}.strength-grid{grid-template-columns:repeat(2,1fr)}.project-list{grid-template-columns:1fr 1fr}.project:last-child{grid-column:1/-1;min-height:430px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+    @media(max-width:640px){.site-header{height:62px}.mark-text{display:none}.site-nav{gap:12px}.site-nav a:not(.nav-cta){display:none}.hero{min-height:680px}.hero-content{padding-top:55px}.hero h1{font-size:clamp(52px,16vw,75px)}.role{font-size:34px}.hero-note{max-width:88%}.hero-art{right:-175px;bottom:15px;width:430px;height:360px;opacity:.28}.hero-symbol{width:330px}.section-title{font-size:40px}.strength-grid{grid-template-columns:1fr}.strength{min-height:0}.project-tabs{font-size:9px}.project-list{grid-template-columns:1fr}.project,.project:last-child{grid-column:auto;min-height:480px}.job summary{grid-template-columns:70px 1fr auto;gap:12px;padding:18px 16px}.job h3{font-size:14px}.job p{padding:0 20px 20px 98px}.contact-banner{min-height:430px}.contact-banner:after{right:-130px;opacity:.55}.footer-cta-inner{align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.copyright{line-height:1.5}.project-tabs span{padding-inline:3px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.project img,.plus{transition:none}}
+  
+    .hero{background:radial-gradient(ellipse at 80% 44%,#902caf45,transparent 40%),linear-gradient(120deg,#07172f 20%,#151831 70%,#31173f)}
+    .yeah-wordmark{position:relative;font-weight:900;font-style:italic;font-size:clamp(92px,12vw,170px);letter-spacing:-.09em;line-height:1;color:#fff;transform:rotate(-8deg);text-shadow:0 12px 0 #ffffff0b,0 25px 60px #d847bd45}
+    .yeah-wordmark>span{display:inline-block;background:linear-gradient(150deg,#faab39 10%,#ef3e9c 55%,#9955ff);background-clip:text;-webkit-background-clip:text;color:transparent;padding-right:12px}
+    .yeah-wordmark small{display:block;font-style:normal;font-size:9px;letter-spacing:3px;margin:18px 0 0 12px;color:#dec4e2;text-shadow:none}
+    .yeah-orbit{position:absolute;width:85%;aspect-ratio:1;border:1px solid #e889ff35;border-radius:50%;transform:rotate(-28deg) scaleY(.72);box-shadow:0 0 80px #c241c525,inset 0 0 70px #c241c515}
+    .button.primary:hover{background:#ca4ced}
+    @media(max-width:700px){.yeah-wordmark{font-size:100px}.yeah-wordmark small{font-size:7px;letter-spacing:2px}}
+  
+    /* Project covers inspired by the supplied lavender visual. */
+    .project{background:#eed6f8;border-color:#c392e6}
+    .project:after{background:linear-gradient(180deg,transparent 48%,#f3def9c9 66%,#f3def9 100%)}
+    .project-content{color:#302139}
+    .project-no,.project p,.metrics span{color:#624b70}
+    .project h3 span{color:#8b3fba}.metrics strong{color:#302139}
+  
+    /* Yeah1 brand palette and reference-inspired project backdrop. */
+    :root{--navy:#15101d;--navy-2:#21142d;--navy-3:#321b43;--surface:#291b36;--blue:#8000cf;--blue-light:#cc80ff;--orange:#ff1850;--orange-light:#ef9ac8;--muted:#bcafc7}
+    body{background:var(--navy)}
+    .hero{background:radial-gradient(ellipse at 80% 44%,#b64df62e,transparent 42%),radial-gradient(ellipse at 92% 70%,#ff185018,transparent 36%),#15101d}
+    .hero-art:before{background:radial-gradient(circle,#b64df622,transparent 70%)}
+    .hero-brand-symbol{position:relative;width:min(31vw,390px);height:auto;filter:drop-shadow(0 24px 40px #8000cf30)}
+    .button.primary,.contact-primary{background:#8000cf;border-color:#8000cf}
+    .button.primary:hover,.contact-primary:hover{background:#a12be3}
+    .cover{background:linear-gradient(#15101d,#1c1327)}
+    .letter-panel{background:linear-gradient(135deg,#291b36,#21152d 60%,#362044)}
+    .letter-panel:after{background:#b64df61c}
+    .strength{background:linear-gradient(145deg,#332044,#21152d)}
+    .experience{background:#191121}.job{background:#2a1a39}.job[open]{background:#352045}
+    .contact-banner{background:radial-gradient(ellipse at 85% 50%,#b64df651,transparent 45%),radial-gradient(ellipse at 77% 70%,#ff18502b,transparent 35%),#15101d}
+    .footer-cta{background:#30203e}footer{background:#120c19}
+    .projects{position:relative;isolation:isolate;background-color:#fcf9ff;background-image:url('assets/yeah1-pattern.svg'),radial-gradient(ellipse at 0% 62%,#d99cf344,transparent 43%),radial-gradient(ellipse at 100% 0%,#e1b8f64d,transparent 48%);background-size:240px 250px,auto,auto;color:#302139}
+    .projects .section-kicker{color:#8000cf}
+    .projects .section-intro{color:#6b5b75}
+    .projects .project-tabs{border-color:#baa6c944}
+    .projects .project-tabs span{color:#776780}
+    .projects .project-tabs span:nth-child(2){color:#8000cf;background:#b64df60b;border-bottom-color:#b64df6}
+    .project{box-shadow:0 14px 36px #622c7912}
+    @media(max-width:900px){.hero-art{right:-70px;opacity:.55}.hero-brand-symbol{width:330px}}
+    @media(max-width:640px){.hero-art{right:-140px;opacity:.25}.hero-brand-symbol{width:300px}.projects{background-size:180px 188px,auto,auto}}
+      .hero-brand-symbol{animation:yeah1-float 6s ease-in-out infinite;transform-origin:50% 50%;will-change:transform}
+    @keyframes yeah1-float{
+      0%,100%{transform:perspective(900px) translateY(0) rotateY(-9deg) rotateZ(-3deg)}
+      50%{transform:perspective(900px) translateY(-22px) rotateY(9deg) rotateZ(3deg)}
+    }
+    @media(prefers-reduced-motion:reduce){.hero-brand-symbol{animation:none;will-change:auto}}</style>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Bỏ qua điều hướng</a>
+  <div class="header-shell">
+    <div class="wrap">
+      <header class="site-header">
+        <a class="mark" href="#top" aria-label="Về đầu trang"><span class="mark-symbol">H.</span><span class="mark-text">CÙ PHẠM THÀNH HIẾU</span></a>
+        <nav class="site-nav" aria-label="Điều hướng chính"><a href="#cover">Thư ứng tuyển</a><a href="#projects">Dự án</a><a href="#experience">Kinh nghiệm</a><a class="nav-cta" href="cv.pdf" target="_blank" rel="noopener">Xem CV ↗</a></nav>
+      </header>
+    </div>
+  </div>
+
+  <main class="hero" id="main">
+    <div class="hero-content">
+      <div class="eyebrow">YEAH1 GROUP · UI/UX DESIGNER APPLICATION</div>
+      <h1>Cù Phạm<br>Thành Hiếu</h1>
+      <p class="role">UI/UX Designer</p>
+      <p class="hero-note">Thiết kế sản phẩm số — kết nối research, business và technology để tạo nên những trải nghiệm rõ ràng, nhất quán và khả thi khi triển khai.</p>
+      <div class="hero-actions"><a class="button primary" href="#cover">Đọc thư ứng tuyển ↓</a><a class="button" href="https://hieuu.webflow.io/" target="_blank" rel="noopener">Xem portfolio ↗</a><a class="button" href="cv.pdf" target="_blank" rel="noopener">Xem CV ↗</a></div>
+    </div>
+    <div class="hero-art" aria-hidden="true"><img class="hero-brand-symbol" src="assets/yeah1-symbol-3d.png" alt="" width="1456" height="1088"></div>
+    <div class="scroll-cue">Scroll to explore</div>
+  </main>
+
+  <section class="cover" id="cover">
+    <div class="wrap">
+      <div class="section-kicker">01 — Cover letter</div>
+      <h2 class="section-title">Từ thấu hiểu đến trải nghiệm</h2>
+      <p class="section-intro">Một UI/UX Designer có thể đi cùng feature từ lúc vấn đề còn chưa rõ cho đến khi sản phẩm được kiểm thử và vận hành.</p>
+      <div class="letter-panel">
+        <div class="letter-grid">
+          <p class="letter-lead">Kính gửi đội ngũ tuyển dụng <span>Yeah1.</span></p>
+          <div class="letter-copy">
+            <p>Em là <strong>Cù Phạm Thành Hiếu</strong>, ứng tuyển vị trí <strong>UI/UX Designer</strong> tại Yeah1 Group. Với kinh nghiệm thiết kế sản phẩm số, em muốn mang khả năng biến yêu cầu phức tạp thành luồng trải nghiệm rõ ràng, nhất quán và khả thi khi triển khai vào hệ sinh thái sản phẩm số của Yeah1.</p>
+            <p>Gần nhất, trong vai trò <strong>UX/UI Designer · Feature Owner tại TGDĐ/ĐMX</strong>, em theo sát một feature từ làm rõ yêu cầu, nghiên cứu, user flow, wireframe, UI và prototype đến phối hợp phát triển, kiểm thử và đánh giá sau triển khai. Trước đó, em đã thiết kế Web, Mobile, CRM và HMI; xây dựng Design System; làm việc cùng Product Owner, BA, Developer và nhiều nhóm stakeholder.</p>
+            <p>Điều thu hút em ở vị trí này là cơ hội kết nối nghiên cứu người dùng, thiết kế Web/App và xây dựng Design System trong cùng một quy trình. Em mong được cùng PO/PM xác định đúng bài toán, cân bằng trải nghiệm với mục tiêu kinh doanh, kiểm chứng giải pháp qua prototype và user testing, rồi phối hợp Developer trong handoff và Design QA để giữ chất lượng khi triển khai.</p>
+          </div>
+        </div>
+        <div class="strength-grid">
+          <article class="strength"><span class="strength-num">01 / RESEARCH</span><h3>UX dựa trên bằng chứng</h3><p>Competitive analysis, phỏng vấn, khảo sát, usability testing và tổng hợp dữ liệu để đề xuất giải pháp.</p></article>
+          <article class="strength"><span class="strength-num">02 / PROCESS</span><h3>Thiết kế end-to-end</h3><p>Problem framing, user flow, wireframe, UI, interactive prototype, bàn giao và UX audit.</p></article>
+          <article class="strength"><span class="strength-num">03 / SYSTEM</span><h3>Design System</h3><p>Atomic Design System, UI Kit, component library và guideline hỗ trợ mở rộng Web/App.</p></article>
+          <article class="strength"><span class="strength-num">04 / DELIVERY</span><h3>Phối hợp triển khai</h3><p>Phối hợp PO/PM, BA và Developer; bàn giao thiết kế, kiểm tra giao diện và tham gia UAT/FAT.</p></article>
+        </div>
+      </div>
+      <div class="cover-actions"><a class="button primary" href="cv.pdf" target="_blank" rel="noopener">Xem CV ↗</a><a class="button" href="https://hieuu.webflow.io/" target="_blank" rel="noopener">Xem portfolio ↗</a><a class="button" href="https://aiproductarchive.vercel.app/" target="_blank" rel="noopener">AI Product Archive ↗</a></div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <div class="section-kicker">02 — Selected projects</div>
+      <h2 class="section-title">Dự án nổi bật</h2>
+      <div class="project-tabs" aria-hidden="true"><span>Tối ưu tăng trưởng</span><span>Trải nghiệm Web/App</span><span>Hệ thống thiết kế</span></div>
+      <p class="section-intro">Ba dự án thể hiện năng lực phù hợp với JD: nghiên cứu và tối ưu hành trình, thiết kế sản phẩm Web/App, xây dựng hệ thống giao diện nhất quán.</p>
+      <div class="project-list">
+        <a class="project" href="https://hieuu.webflow.io/project/sim-dmx" target="_blank" rel="noopener"><img src="assets/sim-dmx-cover-yeah1.svg" alt="SIM DMX — biểu tượng SIM tối giản trên nền gradient tím" width="1122" height="1402" loading="lazy"><div class="project-content"><span class="project-no">01 / UX Optimization</span><h3>SIM DMX <span>↗</span></h3><p>Tối ưu hành trình mua SIM từ phân tích vấn đề đến thử nghiệm và đo lường sau triển khai.</p><div class="metrics"><span><strong>0,8% → 1,2%</strong>CTR</span><span><strong>+15%</strong>Engagement</span><span><strong>−10%</strong>Bounce rate</span></div></div></a>
+        <a class="project" href="https://vi-mwg.vercel.app/" target="_blank" rel="noopener"><img src="assets/vi-mwg-cover-yeah1.svg" alt="Vi-MWG PayLater — điện thoại và thẻ trên nền gradient tím" width="1122" height="1402" loading="lazy"><div class="project-content"><span class="project-no">02 / Financial Product</span><h3>Vi-MWG PayLater <span>↗</span></h3><p>Trải nghiệm sản phẩm tài chính với thông tin dễ hiểu, trạng thái minh bạch và luồng thao tác rõ ràng.</p></div></a>
+        <a class="project" href="https://hieuu.webflow.io/atomic-design-system-ui-kit" target="_blank" rel="noopener"><img src="assets/atomic-design-system-cover-yeah1.svg" alt="Atomic Design System — các khối hình học trên nền gradient tím" width="1122" height="1402" loading="lazy"><div class="project-content"><span class="project-no">03 / Design System</span><h3>Atomic Design System <span>↗</span></h3><p>Chuẩn hóa token, UI Kit, component và guideline để tăng tốc phối hợp Design–Development.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="wrap">
+      <div class="section-kicker">03 — Experience</div>
+      <h2 class="section-title">Đi qua toàn bộ vòng đời sản phẩm</h2>
+      <p class="section-intro">Mở từng vai trò để xem cách kinh nghiệm sản phẩm, hệ thống và visual kết nối với nhau.</p>
+      <div class="experience-list">
+        <details class="job" open><summary><span class="date">Gần nhất</span><div><h3>UX/UI Designer · Feature Owner</h3><span class="company">thegioididong.com · Điện Máy Xanh · TopZone</span></div><span class="plus">+</span></summary><p>Phụ trách UX/UI end-to-end: làm rõ yêu cầu, research, user flow, UI, prototype, phối hợp triển khai, UAT và đánh giá sau phát hành.</p></details>
+        <details class="job"><summary><span class="date">Trước đó</span><div><h3>UX/UI Designer</h3><span class="company">Softworld Vietnam</span></div><span class="plus">+</span></summary><p>Thiết kế HMI, thực hiện UX research và phối hợp đa chức năng để đưa giải pháp từ prototype vào vận hành.</p></details>
+        <details class="job"><summary><span class="date">Trước đó</span><div><h3>UX/UI Designer</h3><span class="company">Liven Technology</span></div><span class="plus">+</span></summary><p>Thiết kế Web, Mobile và CRM; xây dựng trải nghiệm responsive, nhất quán và có thể mở rộng.</p></details>
+        <details class="job"><summary><span class="date">Nền tảng</span><div><h3>Visual Designer</h3><span class="company">Liven Technology</span></div><span class="plus">+</span></summary><p>Phát triển hệ thống nhận diện, chiến dịch truyền thông và ngôn ngữ thị giác cho nhiều ngành hàng.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-banner"><div class="wrap"><div class="contact-copy"><div class="section-kicker">04 — Let's talk</div><h2 class="section-title">Sẵn sàng cho cuộc trao đổi tiếp theo.</h2><p class="section-intro">Em mong có cơ hội chia sẻ sâu hơn về quá trình thiết kế và cách mình có thể đóng góp cho các sản phẩm Web/App tại Yeah1.</p><a class="contact-primary" href="https://zalo.me/0935522285" target="_blank" rel="noopener">093 552 2285 <span>↗</span></a></div></div></div>
+    <div class="footer-cta"><div class="wrap footer-cta-inner"><strong>Kết nối để cùng tạo nên trải nghiệm số tốt hơn.</strong><div class="footer-links"><a href="mailto:cpthanhhieu@gmail.com">Email ↗</a><a href="cv.pdf" target="_blank" rel="noopener">CV ↗</a><a href="https://hieuu.webflow.io/" target="_blank" rel="noopener">Portfolio ↗</a></div></div></div>
+    <footer><div class="wrap"><div class="footer-grid"><div><div class="footer-name">Cù Phạm Thành Hiếu</div><p class="footer-small">UI/UX Designer · Product thinking · Design System<br>Ứng tuyển Yeah1 Group</p></div><div class="footer-col"><strong>Khám phá</strong><a href="#cover">Thư ứng tuyển</a><a href="#projects">Dự án</a><a href="#experience">Kinh nghiệm</a></div><div class="footer-col"><strong>Liên hệ</strong><a href="mailto:cpthanhhieu@gmail.com">cpthanhhieu@gmail.com</a><a href="https://zalo.me/0935522285" target="_blank" rel="noopener">093 552 2285</a><a href="#top">Về đầu trang ↑</a></div></div><div class="copyright"><span>UI/UX DESIGNER APPLICATION · Yeah1 · 2026</span><span>DESIGNED WITH CLARITY</span></div></div></footer>
+  </section>
+</body>
+</html>
